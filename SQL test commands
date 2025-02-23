@@ -1,0 +1,9 @@
+Confirm the table exists using:
+SHOW TABLES;
+
+Check if it’s working by inserting a test booking:
+INSERT INTO appointments (customer_name, phone, email, service, appointment_date)
+VALUES ('John Doe', '123-456-7890', 'johndoe@email.com', 'Fade Haircut', '2025-03-01 14:00:00');
+
+Retrieve all bookings using:
+SELECT * FROM appointments;

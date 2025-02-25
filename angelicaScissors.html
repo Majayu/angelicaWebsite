@@ -12,14 +12,27 @@
         <h1>Angelica Scissors</h1>
     </header>
 
+    <!-- 🖼️ IMAGE GALLERY SECTION -->
     <section class="gallery">
         <h2>My Work</h2>
         <div class="image-container" id="imageGallery">
-            <!-- Images will be loaded dynamically here -->
+            <!-- Images will be dynamically loaded here -->
         </div>
+    </section>
+
+    <!-- ✂️ BOOKING FORM SECTION -->
+    <section class="booking">
+        <h2>Book an Appointment</h2>
+        <form id="bookingForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <input type="email" id="email" placeholder="Email (Optional)">
+            <input type="text" id="service" placeholder="Service Type" required>
+            <input type="datetime-local" id="appointmentDate" required>
+            <button type="submit">Book Now</button>
+        </form>
     </section>
 
     <script src="angelicaScissors.js"></script>
 </body>
 </html>
-

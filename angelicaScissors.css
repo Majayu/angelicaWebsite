@@ -1,34 +1,106 @@
+/* 🎨 GENERAL STYLES */
 body {
     background-color: #111;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif; /* Modern Font */
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
+/* HEADER STYLES */
 header {
     background-color: #222;
     padding: 20px;
-    font-size: 24px;
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
 }
 
+/* 🖼️ GALLERY STYLES */
 .gallery {
-    margin-top: 20px;
+    margin-top: 30px;
+    padding: 20px;
 }
 
 .image-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
     padding: 20px;
 }
 
 .image-container img {
-    width: 80%;
-    max-width: 600px;
+    width: 90%;
+    max-width: 500px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
+/* Hover effect on images */
+.image-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.5);
+}
+
+/* ✂️ BOOKING FORM STYLES */
+.booking {
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.booking h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, button {
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+}
+
+input {
+    background-color: #333;
+    color: white;
+    outline: none;
+}
+
+input:focus {
+    border: 2px solid #FFD700;
+}
+
+button {
+    background-color: #FFD700;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #ffbb00;
+}
+
+/* 📱 RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .image-container img {
+        width: 100%;
+    }
+}

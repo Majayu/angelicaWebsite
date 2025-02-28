@@ -1,0 +1,24 @@
+config.yml 
+
+url: http://192.168.1.254/Angelica/angelicaScissors.html:8000
+tunnel: ba1c6c63-b28a-4a29-9d8e-375039d294a8
+credentials-file: /root/.cloudflared/ba1c6c63-b28a-4a29-9d8e-375039d294a8.json
+
+#Connect tunel:
+cloudflared tunnel route dns homeLabPI newlookgirls.com
+cloudflared tunnel route dns ba1c6c63-b28a-4a29-9d8e-375039d294a8 Home.newlookgirls.com
+
+
+cloudflared tunnel run ba1c6c63-b28a-4a29-9d8e-375039d294a8
+
+
+
+///
+
+alex@localhost:/usr/local/etc/cloudflared$ cloudflared tunnel route dns ba1c6c63-b28a-4a29-9d8e-375039d294a8 Home.newlookgirls.com
+2025-02-27T22:53:41Z INF Added CNAME home.newlookgirls.com which will route to this tunnel tunnelID=ba1c6c63-b28a-4a29-9d8e-375039d294a8
+
+ingress:
+  - hostname: home.newlookgirls.com 
+    service: http://192.168.1.254/Angelica/angelicaScissors.html:80
+  - service: http_status:404

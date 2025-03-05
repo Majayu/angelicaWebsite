@@ -1,0 +1,13 @@
+/home/alex/.cloudflared
+
+tunnel: caefc317-7232-4b75-9d80-60266d56f953
+credentials-file: /home/alex/.cloudflared/caefc317-7232-4b75-9d80-60266d56f953.json
+
+ingress:
+  - hostname: homepage.newlookgirls.com
+    service: http://192.168.1.254:80
+  - service: http_status:404
+
+
+run the tunnel 
+cloudflared tunnel run caefc317-7232-4b75-9d80-60266d56f953

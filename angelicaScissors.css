@@ -1,11 +1,14 @@
 /* 🎨 GENERAL STYLES */
 body {
     background-color: #111;
+    background-image: url('Background.jpg');
+    background-size: cover; /* Ensures the image covers the entire screen */
     color: white;
-    font-family: 'Poppins', sans-serif; /* Modern Font */
+    font-family: 'Poppins', sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
 /* HEADER STYLES */

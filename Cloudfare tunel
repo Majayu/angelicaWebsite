@@ -11,3 +11,5 @@ ingress:
 
 run the tunnel 
 cloudflared tunnel run caefc317-7232-4b75-9d80-60266d56f953
+
+/home/alex/.cloudflared

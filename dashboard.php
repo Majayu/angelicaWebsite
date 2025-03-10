@@ -23,6 +23,12 @@ include 'db.php';
         <a href="logout.php">Logout</a>
     </header>
 
+    <!-- 🔍 Search Form -->
+    <form action="dashboard.php" method="GET">
+        <input type="text" name="search" placeholder="Search by name, phone, or date">
+        <button type="submit">Search</button>
+    </form>
+
     <section class="appointments">
         <table>
             <tr>
@@ -30,10 +36,20 @@ include 'db.php';
                 <th>Phone</th>
                 <th>Service</th>
                 <th>Date & Time</th>
+                <th>Actions</th>
             </tr>
 
             <?php
-            $result = $conn->query("SELECT customer_name, phone, service, appointment_date FROM appointments ORDER BY appointment_date ASC");
+            $query = "SELECT id, customer_name, phone, service, appointment_date FROM appointments";
+
+            // Search Logic
+            if (isset($_GET['search'])) {
+                $search = $_GET['search'];
+                $query .= " WHERE customer_name LIKE '%$search%' OR phone LIKE '%$search%' OR appointment_date LIKE '%$search%'";
+            }
+
+            $query .= " ORDER BY appointment_date ASC";
+            $result = $conn->query($query);
 
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>
@@ -41,6 +57,10 @@ include 'db.php';
                         <td>{$row['phone']}</td>
                         <td>{$row['service']}</td>
                         <td>{$row['appointment_date']}</td>
+                        <td>
+                            <a href='edit.php?id={$row['id']}'>Edit</a> |
+                            <a href='delete.php?id={$row['id']}' onclick='return confirm(\"Are you sure?\")'>Delete</a>
+                        </td>
                       </tr>";
             }
 
